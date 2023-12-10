@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+        <title>SignUp-Page</title>
+        <style>
+            /*this is for mobile screen*/
+            @media(0px <= width <= 750px){
+                form{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width:65vw;
+                border-radius: 20px;
+                background:linear-gradient(to bottom right,red,rgb(7, 7, 40));
+            }
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(54, 51, 51);
+                margin-top: 40px;
+        
+            }
+            ul{
+                list-style: none;
+               padding:0px 20px 20px 20px;
+            }
+            }
+             /*mobile screen ending*/
+              /*this is for Tab screen*/
+             @media(750px <= width <=990px){
+                form{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width:55vw;
+                border-radius: 20px;
+                background:linear-gradient(to bottom right,red,rgb(7, 7, 40));
+            }
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(54, 51, 51);
+                margin-top: 40px;
+        
+            }
+            ul{
+                list-style: none;
+               padding:0px 20px 20px 20px;
+            }
+             }
+            /* Tab screen ending*/
+
+           /* for Laptop screen*/
+           @media(990px <=width <=1450px){
+            form{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width:20vw;
+                border-radius: 20px;
+                background:linear-gradient(to bottom right,red,rgb(7, 7, 40));
+            }
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(54, 51, 51);
+                margin-top: 40px;
+        
+            }
+            ul{
+                list-style: none;
+               padding:0px 20px 20px 20px;
+            }
+           }
+           /*Laptop screen ending*/
+
+            li{
+                padding:15px;
+            }
+            .libtn{
+                    padding: 10px;
+                }
+            li h3{
+                color:gold;
+                text-align: center;
+            }
+            button{
+                border-radius: 10px;
+                background:linear-gradient(to top left,rgb(4, 212, 4),rgb(12, 28, 12));
+                color:white;
+            }
+            #input1:valid+div{
+            display:none;
+        }
+        #input1:invalid+div{
+            display:block;
+        }
+        #input3:valid+div{
+            display:none;
+        }
+        #input3:invalid+div{
+            display:block;
+        }
+       
+            </style>
+    </head>
+    <body>
+        <form>
+           
+            <ul> 
+                <li><h3>SignUp Form</h3></li>
+                <li><input type="text" placeholder="Full Name *" id="input1" required>
+                    <div style="color:yellow;" id="div1">full name required</div>
+                </li>
+                <li><input type="mail" placeholder="Email *"  id="input2" onkeyup="CheckEmail()">
+                    <div style="color:yellow;" id="div2"></div>
+                </li>
+                <li><input onkeyup="ProgBar()" type="password" placeholder="Password *" id="input3" name="password" pattern="^(?=.*\d)(?=.*\w)(?=.*\W).+$" title="contain atleast one uppercase one lowercase one number and special charecter total 8 charecters">
+                    <div style="color:yellow;" id="div3"></div>
+                </li>
+                <li><input type="password" placeholder="Confirm Password *"  id="input4" onkeyup="MatchPassword()">
+                    <div style="color:yellow;" id="div4"></div>
+                </li>
+                <div id="prog" class="progress-bar progress-bar-animated progress-bar-striped ms-3" style="width:86%; border:2px solid rgb(146, 144, 144);height:15px;border-radius:10px;padding:10px;text-align:center;color:rgb(0, 0, 0);"></div>
+                <li><button type="submit">SignUp</button>
+                <li class="libtn"><a href="login.html"><button type="button">Go to Login</button></a></li>
+                <li class="libtn"><a href="index.html"><button type="button">Go to Home</button></a></li>
+            </ul>
+        </form>
+        <script>
+           function CheckEmail(){
+            var inp2=document.getElementById("input2").value;
+            var div2=document.getElementById("div2");
+            if(inp2.endsWith("@gmail.com")){
+                div2.innerHTML="";
+            }
+            else{
+                div2.innerHTML="ends with @gmail.com";
+            }
+           }
+           function MatchPassword(){
+            var inpt3=document.getElementById("input3").value;
+            var inpt4=document.getElementById("input4").value;
+            var div4=document.getElementById("div4");
+            if(inpt4==inpt3){
+                div4.innerHTML="";
+            }
+            else{
+                div4.innerHTML="Pass&cnfPass should same"
+            } 
+           }
+            function ProgBar(){
+            var pass=document.getElementById("prog");
+            var inpt3=document.getElementById("input3");
+            if(inpt3.value.length <=3){
+               pass.style.backgroundColor="red";
+               pass.style.color="balck";
+               pass.textContent="poor password"
+            }
+            else if(inpt3.value.length ==4){
+               pass.style.backgroundColor="yellow";
+               pass.style.color="balck";
+               pass.textContent="weak password"
+            }
+            else{
+               pass.style.backgroundColor="green";
+               pass.style.color="balck";
+               pass.textContent="strong password"
+            }
+           
+           }
+        </script>
+        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"></script>
+        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   </body>
+    </body>
+</html>

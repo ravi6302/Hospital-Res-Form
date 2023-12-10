@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Page</title>
+    <style>
+        /*this is for mobile screen*/
+        @media(0px <= width <= 750px){
+            form{
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            width:65vw;
+            border-radius: 20px;
+            background:linear-gradient(to bottom right,red,rgb(7, 7, 40));
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(54, 51, 51);
+            margin-top: 40px;
+    
+        }
+        ul{
+            list-style: none;
+           padding:0px 20px 20px 20px;
+        }
+        }
+         /*mobile screen ending*/
+          /*this is for Tab screen*/
+         @media(750px <= width <=990px){
+            form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:55vw;
+            border-radius: 20px;
+            background:linear-gradient(to bottom right,red,rgb(7, 7, 40));
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(54, 51, 51);
+            margin-top: 40px;
+    
+        }
+        ul{
+            list-style: none;
+           padding:0px 20px 20px 20px;
+        }
+         }
+        /* Tab screen ending*/
+
+       /* for Laptop screen*/
+       @media(990px <=width <=1450px){
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:20vw;
+            border-radius: 20px;
+            background:linear-gradient(to bottom right,red,rgb(7, 7, 40));
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(54, 51, 51);
+            margin-top:20px;
+    
+        }
+        ul{
+            list-style: none;
+           padding:0px 20px 20px 20px;
+        }
+       }
+       /*Laptop screen ending*/
+
+        li{
+            padding: 15px;
+        }
+        .libtn{
+                padding: 10px;
+            }
+        li h3{
+            color:gold;
+            text-align: center;
+        }
+        button{
+            border-radius: 10px;
+            background:linear-gradient(to top left,rgb(4, 212, 4),rgb(12, 28, 12));
+            color:white;
+        }
+        #input1:valid+div{
+            display:none;
+        }
+        #input1:invalid+div{
+            display:block;
+        }
+        #input2:valid+div{
+            display:none;
+        }
+        #input2:invalid+div{
+            display:block;
+        }
+        </style>
+</head>
+<body>
+    <form>
+       
+        <ul>
+            <li><h3>Login Form</h3></li>
+            <li><input type="text" id="input1" placeholder="Username *" required>
+                <div style="color:yellow;" id="div1">user name required</div>
+            </li>
+            <li><input type="password" id="input2" placeholder="Password *" required>
+                <div style="color:yellow;" id="div2">password required</div>
+            </li>
+           
+            <li><input type="email" id="input3" placeholder="Email *" onkeyup="CheckEmail()">
+                <div style="color:yellow;" id="div3"></div>
+            </li>
+           
+            <li><input type="checkbox" id="input4">
+                <div style="color:yellow;" id="div4"></div>
+            </li>
+           
+            <li><button type="submit">Login</button>
+            <li class="libtn"><a href="signup.html"><button type="button">Go to SignUp</button></a></li>
+            <li class="libtn"><a href="index.html"><button type="button">Go to Home</button></a></li>
+        </ul>
+        
+        <script>
+            function CheckEmail(){
+                var inp3=document.getElementById("input3").value;
+                var div3=document.getElementById("div3");
+                if(inp3.endsWith("@gmail.com")){
+                            div3.innerHTML="";
+                        }
+                else{ 
+                    div3.innerHTML="ends with @gmail.com";
+                }
+            }
+        </script>
+    </form>
+    <script>
+    </script>
+</body>
+</html>
